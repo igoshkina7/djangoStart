@@ -1,0 +1,832 @@
+@media screen and (max-width: 479px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html,
+    body {
+       
+      background-color: rgb(239, 240, 239);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      padding-top: 1vh;
+      padding-bottom: 1vh;
+      height: 8vh;
+      text-align: center;
+      color: black;
+      width: 98.65vw;
+      background-color: #f9f9f9;
+      left: 0;
+      right: 0;
+      top:0;
+    }
+    
+    .header h1{
+      font-size: 3vh;
+    }
+    
+    .logo{
+       width: 30vw;
+    }
+    .logo h1{
+      font-size: 0vh;
+    }
+
+    nav label{
+        display: inline-block;
+    }
+    nav > ul {
+       display: none;
+       background:  #f9f9f9;
+    }
+    input[name="menu"]:checked ~ label + ul {
+       display: block;
+    }
+    nav a{
+        padding: 1vh 1vw 2vh 1vw;
+    }
+         
+    /*поиск*/
+    .bl_poisk{
+      padding: 2vh 1vw 1vh 1vw;
+      margin-right: 2vw;
+    }
+    .bl_poisk p{
+      font-size:3vh;
+    }
+    
+    
+    /*блоки главной страницы*/
+    
+    .block_index{
+      color: rgb(164, 165, 163);
+      width: 98.65vw;
+    }
+    
+    .bl1{
+      background-image: url("/media/index/gl_bl1.jpg");
+      background-size: 100% 100%;
+      height: 25.65vh;
+      padding: 8vh 1vw 2vh 1vw;
+      text-align: center;
+    }
+    .bl1 h1{
+      font-size:4vh;
+      width: 60vw;
+      float: center;
+      margin-left: 14%;
+      margin-bottom:3%;
+      margin-top:4%;
+      color:#000;
+    }
+    .bl1 p{
+      font-size:0vh;
+    }
+    
+    
+    .bl2{
+      background-image: no-repeat url("/media/index/vac.jpg") ;
+      background-size: auto 100%;
+      height: 37vh;
+      padding: 2vh 1vw 2vh 4vw;
+      text-align: left;
+    }
+    .bl2 h1{
+      font-size:4vh;
+      width: 30%;
+      float: center;
+      margin-bottom:3%;
+      margin-top:5%;
+      color:#000;
+    }
+    .bl2 p{
+      font-size:2.2vh;
+      width: 43vw;
+      float: center;
+      color:rgb(52, 51, 51);
+      margin-bottom:0;
+    }
+    
+    .bl3{
+      background-image: url("/media/about/we.png");
+      background-size: auto 100%;
+      height: 32vh;
+      padding: 2vh 1vw 2vh 4vw;
+      text-align: left;
+    }
+    .bl3 h1{
+      font-size: 4vh;
+      width: 35vw;
+      float: center;
+      margin-bottom:3%;
+      margin-top:5%;
+      color:#000;
+    }
+    .bl3 p{
+      font-size:2.2vh;
+      width: 47vw;
+      float: center;
+      color:rgb(52, 51, 51);
+      margin-bottom:0;
+    }
+
+     /*прокрутка на главной*/
+    .section {
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      gap: 1px;
+      height: 35.65vh;
+      width: 98.65vw;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 0;
+      margin: auto;
+      scrollbar-width: none;
+      margin-left: 0;
+    }
+      
+    .section::-webkit-scrollbar { 
+      width: 1.2vw;
+      height: 1.5vh;
+      margin:0;
+      top:0;
+    }
+    .section::-webkit-scrollbar-track {
+          background: rgb(215, 215, 216); /* цвет дорожки */
+    }
+    .section::-webkit-scrollbar-thumb {
+      background-color: rgb(4, 4, 4); /* цвет плашки */
+      opacity: 40%;
+      border-radius: 20px; /* закругления плашки */
+      border: 3px solid rgb(198, 199, 201);
+    }
+    
+    .section__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 auto;
+      width: 98vw;
+      height: 34vh;
+      scroll-snap-align: start;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      text-align: center;
+      color: black;
+      text-overflow: ellipsis;
+    }
+      
+    .section__item h1 {
+      color: black;
+      font-size: 3vh;
+      text-decoration: none !important;
+      margin-top: 3vh 2vw 2vh 2vw;
+      width: 82vw;
+    }
+    .section__item p {
+      font-size: 1.5vh;
+      max-width: 80vw; 
+      margin-top: 3vh 2vw 2vh 2vw; 
+      padding: auto auto 15px;
+      color: black;
+    }
+      
+    #img1{
+      background-image: url("/media/index/gl_bl1.png");
+      background-size: auto 100%;
+    }
+    #img2{
+      background-image: url("/media/index/scroll1.jpg");
+      background-size: auto 100%;
+    }
+    #img3{
+      background-image: url("/media/index/scroll2.jpg");
+      background-size: auto 100%;
+    }
+    #img4{
+      background-image: url("/media/index/scroll.jpg");
+      background-size: auto 100%;
+    }
+    #img5{
+      background-image: url("/media/index/scroll3.png");
+      background-size: auto 100%;
+    }
+    
+    /*блоки на странице про нас*/
+    
+    .block_about{
+      color: rgb(164, 165, 163);
+      text-align: left;
+      width: 98.65vw;
+      padding: 12vh 3vw 5vh 5vw;
+    }
+    
+    .bl4{
+      background: linear-gradient(to right, #F6EFD2, #CEAD78);
+      background-size: 100%;
+      height: 40vh;
+    }
+    .bl4 h1{
+      font-size:5vh;
+      width: 78.65vw;
+      text-align: center;
+      margin-bottom:3%;
+      margin-top:1%;
+      color:rgb(34, 33, 33);
+    }
+    .bl4 p{
+      font-size:2.5vh;
+      width: 85.65vw;
+      text-align: left;
+      color:rgb(34, 33, 33);
+      margin-bottom:1vh;
+      margin-left: 2vw;
+      font-weight: 600;
+    }
+    .bl4 h4{
+        font-size:0vh;
+        margin:0;
+      }
+    
+    .bl5{
+      background: linear-gradient(to right, #F6EFD2, #CEAD78);
+      text-align: center;
+      height: 10vh;
+      padding-top: 4%;
+    }
+    .bl5 h1{
+      font-size:4vh;
+      width: 78.65vw;
+      float: center;
+      margin-bottom:3%;
+      color:rgb(32, 31, 31);
+    }
+    
+    .bl7{
+      background-color: rgb(239, 240, 239);
+      padding:2vh 5vw 5vh 5vw;
+      text-align: center;
+      height: 85vh;
+    }
+    .bl7 h1{
+      font-size:3vh;
+      margin-bottom:3%;
+      margin-top:3%;
+      color:rgb(32, 31, 31);
+    }
+    .bl7 p{
+      font-size:2vh;
+      color:rgb(34, 33, 33);
+    }
+    .bl7 > img{
+      align-items: center;
+      height: 75%;
+      border: 1vh solid rgb(239, 240, 239);
+    }
+    
+    /*блоки в статье отдельной*/
+    
+    .bl_article{
+      background-image: url("/media/article/bok_art.png");
+      background-size: 100%;
+      color: rgb(164, 165, 163);
+      padding: 10vh 3vw 5vh 3vw;
+      text-align: left;
+      width: 98.65vw;
+      height: auto;
+    }
+
+    .article {
+        width: 80%;
+        color: rgb(49, 49, 49);
+        margin: 2% auto 20px auto;
+        text-align: left;
+        padding-bottom: 5px;
+        font-family: Palatino, URW Palladio L, serif;
+    }
+   
+    .article h1 {
+      color: rgb(53, 23, 12); 
+      text-align: center; 
+      font-size: 4.5vh; 
+      font-weight: 510;
+    }
+    .article h2 {
+      margin-top: 3%;
+      text-align: left; 
+      font-size: 3vh;
+      font-weight: lighter;
+      font-style:italic;
+    }
+    .article h3 {
+      margin-top: 3%;
+      text-align: left; 
+      font-size: 3.5vh;
+      color: rgb(77, 34, 11);
+      font-weight: lighter;
+    }
+    .article p {
+      font-size: 2.5vh;
+    }
+    .article br {
+      font-size: 1.5vh; 
+      margin: 30px 0;
+    }
+    .article i {
+      font-size: 3vh;
+    }
+
+    .article input{
+      width: 8.5vw;
+      height: 5vh;
+    }
+    
+    /*блоки в отдельной вакансии*/
+    
+    .block_vac{
+      color: rgb(164, 165, 163);
+      text-align: left;
+      width: 98.65vw;
+      height: 43vh;
+    }
+    
+    .bl8{
+      background: linear-gradient(to left, transparent, 50%, mistyrose), url("/media/job/title.jpg");
+      background-size: auto 100%;
+      color: black;
+      padding: 10vh 2vw 5vh 5vw;
+    }
+    .bl8 h1{
+       font-size: 5vh;
+    }
+    .bl8 h2{
+        font-size: 2.7vh;
+        margin-bottom:0;
+    }
+    .bl8 h3{
+       font-size: 2.3vh;  
+       margin-bottom:0;
+    } 
+    span {
+        font-size: 2.3vh; 
+        color: black;
+         display: block; 
+         text-align: left;
+         font-weight: 500;
+    }
+    
+    .bl9{
+      height: auto;
+      background: linear-gradient(to left, transparent, 30%, rgb(244, 247, 252)), url("/media/job/osn.png");
+      background-size: 100%;
+      color: black;
+      padding: 5% 25% 5% 9%; 
+      font-weight: 500;
+      font-size: 3vh;
+    }
+    .bl9 p{
+        font-size: 2.5vh;
+    }
+    .bl li{
+        font-size: 2.5vh;
+    }
+    .bl9 ul{
+        font-size: 2.5vh;
+    }
+    .bl9 b{
+        font-size: 3vh;
+    }
+    .bl9 h4{
+      padding-bottom:5%;
+      font-size: 3vh;
+    }
+    
+    .bl13{
+      width: 80%;
+      height: 40%;
+      color: rgb(49, 49, 49);
+      margin: 2% auto 2% auto;
+      text-align: left;
+      padding-bottom: 5px;
+      font-family: Palatino, URW Palladio L, serif;
+    }
+    .bl13 h3{
+        font-size:3vh;
+    }
+    
+    /*страница со статьями*/
+    
+    .bl_art_list{
+      background: url("/media/article/art_list.jpg"),  linear-gradient(to right, rgb(250,251,253), rgb(243,243,246));
+        background-repeat: no-repeat; 
+      background-size: 100%;
+      padding: 17% 5% 10% 5%;
+      text-align: left;
+      width: 98.65vw;
+      height: auto;
+    }
+    .bl_art_list h1{
+      color: black;
+      margin-top: 3vh;
+    }
+    
+    #art_izbr{
+      background:linear-gradient(to right, rgb(250,251,253), rgb(234, 234, 235));
+      padding: 10%;
+    }
+    
+    .bl11{
+      background: linear-gradient(to right,
+      #028663   0  ,   #028663   5%,
+      #f9f9f9   5%  ,   #f9f9f9 100%
+    );
+      width: 100%;
+      height: auto; 
+      padding: 2vh 4vw 2vh 6vw;
+      margin-bottom: 2vh; 
+      border: 0.2vh #028663 solid;
+      text-overflow: ellipsis " ";
+    }
+    .bl11 h3{
+        font-size: 3vh;
+    }
+    .bl11 p{
+        font-size: 1.5vh;
+    }
+
+    /*страница вакансии*/
+    
+    .bl_vac_list{
+      padding: 21% 5% 15% 5%;
+      text-align: left;
+      width: 98.65vw;
+      height: auto;
+    }
+    .bl_vac_list h1{
+      margin-bottom: 5vh;
+    }
+    .bl_vac_list p{
+      font-size: 1.5vh;
+      font-weight: 500;
+    }
+    
+    .vac_poisk{
+      background-size: 100% 25vh;
+    }
+    
+    #vac_aivt{
+      background: url("/media/job/job_aivt.jpg"), white;
+      background-repeat: no-repeat;
+      background-size: 100% 23vh, 100% auto;
+    }
+    
+    #vac_razrab{
+      background: url("/media/job/job_list.jpg"),
+      linear-gradient(to right, rgb(236,235,240), rgb(232,231,236));
+      background-repeat: no-repeat;
+      background-size: 100% 23vh, 100% auto;
+    }
+    
+    #vac_geolog{
+      background: url("/media/job/job_geolog_mobile.jpg"), 
+      linear-gradient(to right, white, rgb(219,213,125));
+      background-size: 100% 23vh, 100% auto;
+      background-repeat: no-repeat;
+
+    }
+    
+    #vac_truba{
+      background: url("/media/job/job_truba.jpg"), 
+      linear-gradient(to right, white, rgb(237,240,247));
+      background-repeat: no-repeat;
+      background-size: 100% 23vh, 100% auto;
+    }
+
+    .bl12{
+      width: 100%;
+      height: auto;
+      padding: 2vh 4vw 2vh 6vw;
+      margin-bottom: 2vh;
+      text-overflow: ellipsis " ";
+    }
+    .bl12 h3{
+        font-size: 3vh;
+    }
+    .bl12 p{
+        font-size: 1.5vh;
+    }
+
+
+.slider-container {
+  background: #f9f9f9;
+  width: 98.65vw;
+  height: 83vh;
+  margin-top: 13vh;
+  margin-bottom: 11vh;
+  text-align: center;
+  position: relative;
+}
+.knopka {
+  position: absolute;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  bottom: 0;
+  opacity:100%;
+}
+.knopka label {
+  cursor: pointer;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50px;
+  margin: 0 0.2em 1em;
+}
+.knopka label:hover,.knopka label:focus {
+  background: #1c87c9;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  padding: 8em 1em 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  transition: left 0s 0.75s;
+}
+[id^="slide"]:checked + .slide {
+  left: 0;
+  z-index: 100;
+  transition: left 0.65s ease-out;
+}
+.slide-1 {
+  background-image: url("/media/job/fac_aivt.jpg");
+}
+.slide-2 {
+  background-image: url("/media/job/fac_razrab.jpg");
+  padding: 15vh 15vw 10vh 15vw;
+}
+.slide-3 {
+  background-image: url("/media/job/fac_geolog.jpg");
+  padding: 13vh 10vw 10vh 10vw;
+}
+.slide-4 {
+    background-image: url("/media/job/fac_truba.jpg");
+    padding: 13vh 10vw 10vh 10vw;
+}
+    
+    /*страница авторизации*/
+    
+    .bl_login{
+      background: url("/media/avtor.jpg") no-repeat;
+      background-size: 100%;
+      color: black;
+      font-weight: 500;
+      padding: 21vh 2vw 1vh 8vw;
+      text-align: left;
+      width: 98.65vw;
+      height: 93.65vh;
+    }
+    .bl_login p{
+      font-size: 2.8vh;
+      padding: 3% auto;
+    }
+    .bl_login p a{
+      text-decoration: underline;
+      color:blue;
+    }
+    
+    /*страница регистрации*/
+    
+    .bl_registr{
+      background: url("/media/registr.jpg");
+      background-size: 100% auto;
+      color: black;
+      font-weight: 500;
+      padding: 13vh 5vw 3vh 5vw;
+      text-align: left;
+      width: 98.65vw;
+      height: auto;
+      font-size: 2vh;
+    }
+    
+    /*личный кабинет*/
+
+.lk{
+  background: url("/media/kaktus_mobile.jpg");
+  background-size: 100% auto;
+  color: black;
+  font-weight: 500;
+  text-align: left;
+  width: 98.65vw;
+  height: 93.65vh;
+}
+.lk h1{
+  margin: 13% 40% 5% 22%;
+}
+.lk h2{
+  margin: 5% 40% 5% 10%;
+}
+.lk h3{
+  margin: 5% 40% 5% 10%;
+  font-size: 3vh;
+}
+
+    a:hover, a:visited, a:link, a:active
+    {
+    text-decoration: none;
+    color: #000;
+    }
+    
+    /*комментарии*/
+    .comments{
+        position: relative;
+        margin: 3% 8% 3% 8%;
+        width: 75vw;
+        color: black;
+    }
+    
+    .comments h1{
+      color:rgb(77, 34, 11);
+      font-size: 3.5vh;
+      font-weight: 600;
+    }
+    
+    .com{
+      background-color: rgb(239, 240, 239);
+      margin-bottom: 1vh;
+      padding: 1vh;
+      width: 75vw;
+      box-shadow:
+      0 1px 4px rgba(0, 0, 0, .3),
+      -23px 0 20px -23px rgba(0, 0, 0, .1),
+      23px 0 20px -23px rgba(0, 0, 0, .1),
+      0 0 40px rgba(0, 0, 0, .1) inset;
+    }
+    .com b{
+        font-size: 2.5vh;
+    }
+    .com p{
+        font-size: 2.5vh;
+        margin-bottom: 1vh;
+    }
+    .com i{
+        font-size: 1.5vh;
+    }
+    
+    /*кнопки главной*/
+    .button {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-49%,0);
+        width: 22vw;
+        height: 4vh;
+        font-size: 1.5vh;
+        font-weight: bold;
+        text-align: center;
+        color: rgb(52, 51, 51);
+        font-family: sans-serif;
+        font-weight: bold;
+        text-decoration:none; 
+        background: #f9f9f9;
+        border: 1px solid rgb(52, 51, 51);
+        border-radius: 2vh;
+        z-index: 1;
+    }
+
+    .btn1{
+        margin: 0vh 0 0 15vw ;
+        padding:0;
+        text-overflow: clip;
+    }
+
+    .btn4{
+      margin: 1vh 0 1vh 25vw ;
+        padding:0;
+        text-overflow: clip;
+    }
+    
+    
+    /*кнопки для комментариев*/
+    .button_dop{
+      background-color: rgb(105, 54, 35);
+      color:#f9f9f9;
+      padding: 1vh 1vw 1vh 1vw;
+      width: 22vw;
+      height: 5vh;
+      font-size: 1.8vh;
+      margin: 2% auto auto 8% ;
+      position: relative;
+      transform: translate(-49%,0);
+      text-align: center;
+      font-family: sans-serif;
+      font-weight: bold;
+      text-decoration:none; 
+      box-sizing: border-box;
+      background-size: 400%;
+      border: 1px solid #f9f9f9;
+      border-radius: 25px;
+      z-index: 1;
+      opacity: 80%;
+    }
+       
+      .button:hover, .button_dop:hover {
+        animation: animate 16s linear infinite;
+      }
+       
+      @keyframes animate {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 400%;
+        }
+      }
+    
+    .button:before, .button_dop:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        z-index: -1;
+        background: linear-gradient(90deg, #FEFFFF, #A7CECC);
+        background-size: 400%;
+        border-radius: 40px;
+        opacity: 0;
+        transition: .5s;
+    }
+       
+      .button:hover:before, .button_dop:hover:before {
+        filter: blur(20px);
+        opacity: 1;
+        animation: animate 16s linear infinite;
+      }
+    
+   
+    
+    .btn2{
+        left: 5%;
+    }
+    
+    .btn3{
+      left: 3%;
+      background-color: #c6c6c6;
+      color: black;
+    }
+    
+    /* кнопка для фильтров*/
+    .button_form{
+      position: relative;
+      display: flex;
+      justify-content:center;
+      padding: 0.3vw 1vh 0.3vw 1vh;
+      margin: 3vh 0px 4vh 0vw;
+      width: 14vw;
+      height: 4vh;
+      text-align: center;
+      font-size: 1.7vh;
+      color: rgb(52, 51, 51);
+      font-family: sans-serif;
+      font-weight: bold;
+      text-decoration:none; 
+      background: #f9f9f9;
+      border: 1px rgb(52, 51, 51) solid;
+      border-radius: 2px;
+    }
+
+    /*футер*/
+    .footer {
+        bottom:0;
+        position: relative; 
+        display: block;
+        float: bottom;
+        color: black; 
+        height: 6vh;
+        width: 98.65vw;
+        background: #f9f9f9;
+        text-align: center;
+        border-top: 2px solid #5b5b5b;
+        padding:0;
+      }
+      
+      .footer p{
+         font-size: 1.5vh;
+         margin: 0.5vh 1vw 0.5vh 1vw;
+      }
+    
+    }

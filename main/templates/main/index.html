@@ -1,0 +1,54 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+
+<div class="bl1 block_index">
+       <h1>Мы рады вас видеть на нашем сервисе!</h1>
+       <p>Не опредилились с местом практики или хотите устроиться на стажировку? Здесь вы сможете найти все, что искали!</p>
+</div>
+
+<div class="bl2 block_index">
+     <h1>Вакансии</h1>
+     <p>Зачем лазить по различным сайтам в поисках работы или практики, если теперь все собранно в одном приложении.</p>
+      <a href="{% url 'job_home' %}" class="btn1 button">Подробнее</a>
+    </div>
+
+  <div class="section">
+
+    <h3>{{ title }}</h3>
+    {% for el in news %}
+    {% if forloop.counter <= 5 %}
+        {% if forloop.counter == 1 %}
+           <div class="section__item" id="img1">
+        {% endif %}
+        {% if forloop.counter == 2 %}
+        <div class="section__item" id="img2">
+        {% endif %}
+        {% if forloop.counter == 3 %}
+        <div class="section__item" id="img3">
+        {% endif %}
+        {% if forloop.counter == 4 %}
+        <div class="section__item" id="img4">   
+        {% endif %}
+        {% if forloop.counter == 5 %}
+        <div class="section__item" id="img5"> 
+        {% endif %}
+            <a href="{% url 'news_detail' el.id %}">
+                <h1>{{ el.title }}</h1>
+                <p>{{ el.anons }}</p>
+                </a>
+           </div> 
+    {% endif %}
+    {% endfor %}
+</div>
+
+<div class="bl3 block_index">
+    <h1>Про создателя</h1>
+    <a href="{% url 'about' %}" class="btn4 button">Подробнее</a>
+</div>
+
+
+{% endblock %}
+
+{% block title %} Main {% endblock %}

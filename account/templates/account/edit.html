@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+<div class="edit">
+    <h1>Редактирование профиля</h1>
+
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="button_form" type="submit" value="Update">
+    </form>
+</div>
+
+
+{% endblock %}
+
+{% block title %} Редактирование профиля {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+<div class="bl_registr">
+    <h1>Регистрация</h1>
+    <p>Пожалуйста, заполните данную форму:</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn3 button_dop" type='submit'>Регистрация</button>
+</form>
+</div>
+
+{% endblock %}
+
+{% block title %} Register {% endblock %}

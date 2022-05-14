@@ -1,0 +1,48 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+
+<div class="bl_article">
+    <div class="article">
+
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.full_text | safe }}</p>
+        <h2>Статья опубликована {{ article.date }}.</h2>
+    </div>
+
+        {% if request.user.is_authenticated %}
+        <a style="margin-left: 10vw" href="{% url 'like' article.id %}"><input type="image" src="/media/like.png"   width="30vw" height="30vh" alt="" style=" margin: 1%"></a>
+        <a href="{% url 'unlike' article.id %}"><input type="image" src="/media/dislike.jpg"  width="30vw" height="30vh" alt="" style=" margin: 1%"></a>
+
+    <div style="margin-left: 10vw" class="bl13 block_vac"> 
+        <form method="post">
+            <h3>Добавить комментарии</h3>
+            {% csrf_token %}
+            <f>{{ form.body }}</f>
+            <button class="button_dop" type="submit">Добавить</button>
+        </form>
+    </div>
+        {% endif %}
+
+
+
+    <div class="comments">
+        <h1>Комментарии</h1>
+        {% for comment in comments reversed %}
+        <div class="com">
+            <b>Пользователь - {{ comment.name }}</b><br>
+            <b>{{ comment.email }}</b>
+           <p>{{ comment.body }} </p> 
+            <i>Добавлен - {{ comment.created }}</i><br>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+
+{% block title %} {{article.title}} {% endblock %}

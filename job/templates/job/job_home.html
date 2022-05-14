@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+<div class="bl_vac_list" id="vac_razrab">
+    <h1>Вакансии</h1>
+    <div>
+        <form style="width: 50vw; padding:0; display:flex; justify-content: start; align-items: center; " action="" method="get">
+        <div>
+            <p>Название(специальность)</p>
+            <div style="width: 50%; margin:1vh 2vw 1vh 0vw; font-size: 3vh;">{{ form3.as_p }}</div>
+            <p>Заработная плата</p>
+            <div style="width: 50%; margin:1vh 2vw 1vh 0vw; font-size: 3vh;">{{ form.as_p }}</div>
+            <input class="button_form" type="submit" value="Поиск">
+        </div>
+        <div>
+            <p>График работы</p>
+            <div style="display: inline-flex; margin-bottom: 3vh; font-size: 3vh;">{{ form1.as_p }}</div>
+            <p>Занятость</p>
+            <div style="display: inline-flex;margin-bottom: 3vh; font-size: 3vh;">{{ form2.as_p }}</div>
+        </div>
+    </form>
+    </div>
+
+    {% for el in jobs %}
+   <div class="bl12" id="bl12_razrab">
+    <a href="{% url 'job_detail' el.id %}">
+        <h3>{{ el.title}}</h3>
+                    <p>{{ el.anons }}</p>
+                    </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block title %} Факультет разработки {% endblock %}

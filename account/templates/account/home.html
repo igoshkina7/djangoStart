@@ -1,0 +1,43 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+<div class='lk'>
+    <h1>Добро пожаловать, {{ information.name_lk }} {{information.surname_lk}}!</h1>
+    <h2>Email: {{information.email_lk}} </h2>
+    <div class="button_dop" id=lichka type="submit">
+      <a href='{% url 'edit' information.pk %}'>Изменить данные профиля</a>
+    </div>
+    
+
+  <div class='bl_vac_list' >
+    <h1 style="margin-bottom: 4vh;">Избранное</h1>
+    <h1>Статьи</h1>
+    {% for el in article %}
+        <div class="bl11">
+            <a href="{% url 'news_detail' el.id_article.id %}">
+            <h3>{{ el.id_article.title }}</h3>
+            <p>{{ el.id_article.anons }}</p>
+            </a>
+        </div>
+    {% endfor %}
+  </div>
+
+   <div class='bl_vac_list' >
+
+    <h1>Вакансии</h1>
+    {% for el in job %}
+      <div class="bl12" id="bl12_razrab">
+        <a href="{% url 'job_detail' el.id_job.id %}">
+        <h3>{{ el.id_job.title }}</h3>
+            <p>{{ el.id_job.anons }}</p>
+        </a>
+     </div>
+    {% endfor %}
+    </div>
+   </div>
+</div>
+
+{% endblock %}
+
+{% block title %} Личный кабинет {% endblock %}

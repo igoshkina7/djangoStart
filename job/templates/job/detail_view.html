@@ -1,0 +1,73 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+    <div class="bl8 block_vac">
+       <h1>{{ job.title }}</h1>
+       <h2><b>Специализация:</b> {{ job.specialty }}</h2>
+       <h3>от <b>{{ job.salary }}</b> руб. до вычета налогов</h3>
+       <h3><b>✓ {{ job.company }}</b></h3>
+       <h3>График работы: <i>{{ job.work_graph }}</i></h3>
+       <script>
+            var a = "{{ job.full_part_time }}";
+            if (a=="True")
+            {
+                document.write ('<span >' + "Полная занятость" + '</span>');
+            }
+            else
+            {
+                document.write ('<span>' + "Неполная занятость" + '</span>');
+            }
+       </script>
+
+      <!-- {% if job.image %}
+       <center>
+          <img class="imagejob" src="{{ MEDIA_URL }}{{ job.image.url }}" , width="450">
+       </center>
+       {% endif %}-->
+    </div>
+    <div class="bl9 block_vac">
+               {{ job.full_text |safe }}
+           <p><i>Вакансия опубликована {{ job.post_date }} в Москве.</i></p>
+    </div>
+
+    <div>
+        <button class="button_dop" id=otklik type="submit">
+            <a href="mailto:{{job.email_company}}?subject=Отклик на вакансию {{ job.title }}&body=С уважением, {{ lk.name_lk }} {{lk.surname_lk}}">Откликнуться</a>
+        </button>
+    </div>
+       <!--
+       {% if request.user.is_authenticated %}
+            <button class="btn btn-success" type="submit" onclick="alert('Для совершения этого действия необходимо зарегистрироваться')">Откликнуться на вакансию</button>
+            <button class="btn btn-warning" type="submit" onclick="alert('Для совершения этого действия необходимо зарегистрироваться')">Добавить в избранное</button>
+            {% endif %} >
+        -->
+       {% if request.user.is_authenticated %}
+       <a style="margin-left: 10vw" href="{% url 'like_j' job.id %}"><input type="image" src="/media/like.png"  width="30vw" height="30vh" alt="" style=" margin: 1%"></a>
+       <a href="{% url 'unlike_j' job.id %}"><input type="image" src="/media/dislike.jpg"  width="30vw" height="30vh" alt="" style=" margin: 1%"></a>
+
+
+      <div class="bl13 block_vac">    
+       <form  method="post">
+              <h3>Добавить комментарии</h3>
+              {% csrf_token %}
+              <f>{{ form.body }}</f>
+              <button class="btn2 button_dop" type="submit">Добавить</button>
+            </form>
+       {% endif %}   
+    </div>
+    <div class="comments">
+        <h1>Комментарии</h1>
+        {% for comment in comments reversed %}
+            <div class="com">
+              <b>Пользователь - {{ comment.name }}</b><br>
+              <p>{{ comment.body }} </p>
+              <i>Добавлен - {{ comment.created }}</i><br>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block title %} {{job.title}} {% endblock %}

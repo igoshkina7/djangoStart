@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+<div class='bl_art_list'>
+    <h1>Статьи</h1>
+        <form style="display: inline-flex;" action="" method="get">
+            {{ form.as_p }}
+            <input type="image" src="/media/article/poisk2.png"  width="25" height="25" alt="" style="background: rgba(255,255,255,0.5); margin: 1%;">
+        </form>
+    {% for el in news %}
+    <div class="bl11 bl_art_list">
+        <a href="{% url 'news_detail' el.id %}">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.anons }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block title %} News {% endblock %}
